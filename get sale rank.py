@@ -11,7 +11,7 @@ for i in range(52):
     if i < 52:
         page_url = requests.get(url[i], headers=header)
         page = page_url.text
-        sales_rank = re.findall('<span>#(.*?) in Automotive', page, re.S)
+        sales_rank = re.findall('<span>#(.*?) in Automotive', page, re.S)[0]
         print(sales_rank, file=rank)
     else:
         print('Finish')
